@@ -1,6 +1,6 @@
 'use strict'
 
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   ctx.fillRect(110, 20, 420, 270);
 
@@ -15,7 +15,7 @@ window.renderStatistics = function(ctx, names, times) {
 
   var max = -1;
 
-  for(var i = 0 ; i < times.length; i++ ) {
+  for (var i = 0; i < times.length; i++) {
     var time = Math.round(times[i]);
     if (time > max) {
       max = time;
@@ -28,13 +28,13 @@ window.renderStatistics = function(ctx, names, times) {
   startX = 120,
   columnIndent = 90;
 
-  for(var i = 0; i < names.length; i++) {
-    var name = names[i],
-    time = Math.round(times[i]),
-    height = parseInt(step * time / 1000),
-    histoX = startX + columnIndent * i;
+  for (i = 0; i < names.length; i++) {
+    var name = names[i];
+    var height = parseInt(step * time / 1000);
+    var histoX = startX + columnIndent * i;
+    time = Math.round(times[i]);
 
-    if (i != myNumber) {
+    if (i !== myNumber) {
       ctx.fillStyle = 'rgba(0, 0, 255, ' + (parseInt(Math.random() * 10) / 10 + 0.1) +')';
     } else {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
@@ -44,4 +44,4 @@ window.renderStatistics = function(ctx, names, times) {
     ctx.fillText(name, histoX, 270);
     ctx.fillText(time + ' мс', histoX, 240 - height);
   }
-}
+};
