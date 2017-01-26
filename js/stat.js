@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 window.renderStatistics = function (ctx, names, times) {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
@@ -22,20 +22,20 @@ window.renderStatistics = function (ctx, names, times) {
     }
   }
 
-  var myNumber = names.indexOf('Вы'),
-  histoHeight = 150,
-  step = histoHeight / (max / 1000),
-  startX = 120,
-  columnIndent = 90;
+  var myNumber = names.indexOf('Вы');
+  var histoHeight = 150;
+  var step = histoHeight / (max / 1000);
+  var startX = 120;
+  var columnIndent = 90;
 
   for (i = 0; i < names.length; i++) {
     var name = names[i];
-    var height = parseInt(step * time / 1000);
+    var height = parseInt(step * time / 1000, 10);
     var histoX = startX + columnIndent * i;
     time = Math.round(times[i]);
 
     if (i !== myNumber) {
-      ctx.fillStyle = 'rgba(0, 0, 255, ' + (parseInt(Math.random() * 10) / 10 + 0.1) +')';
+      ctx.fillStyle = 'rgba(0, 0, 255, ' + (parseInt(Math.random() * 10, 10) / 10 + 0.1) + ')';
     } else {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
