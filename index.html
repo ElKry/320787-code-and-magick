@@ -22,7 +22,6 @@
     Пендальф Синий.
     Вместе с ним вас ждет увлекательное приключение&hellip;
   </p>
-
   <div class="demo"></div>
 </header>
 
@@ -33,26 +32,27 @@
 </footer>
 <script>
   'use-strict';
-  var fireballSize = 22,
-  getFireballSpeed = function(left) {
+  var fireballSize = 22;
+  var getFireballSpeed = function(left) {
     if (left) {
       return 5;
     } else {
       return 2;
     }
-  },
-  wizardSpeed = 3,
-  wizardWidth = 70,
-  getWizardHeight = function(wizardWidth) {
-    return wizardWidth*1.337;
-  },
-  getWizardX = function(width) {
-    return (width-wizardWidth)/2;
-  },
-  getWizardY = function(height) {
-    return height/3;
+  };
+  var wizardSpeed = 3;
+  var wizardWidth = 70;
+  var getWizardHeight = function(wizardWidth) {
+    return wizardWidth * 1.337;
+  };
+  var getWizardX = function(width) {
+    return (width-wizardWidth) / 2;
+  };
+  var getWizardY = function(height) {
+    return height / 3;
   };
 </script>
+<script src="js/stat.js" type="application/javascript"></script>
 <script src="js/game.js" type="application/javascript"></script>
 
 </body>
