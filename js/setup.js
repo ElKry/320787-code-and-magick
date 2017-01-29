@@ -29,7 +29,7 @@ wizardCoat.addEventListener('click', function () {
     'rgb(215, 210, 55)',
     'rgb(0, 0, 0)'
   ];
-  this.style.fill = wizardCoatColors[chooseNumberOfColor(wizardCoatColors.length)];
+  wizardCoat.style.fill = wizardCoatColors[chooseNumberOfColor(wizardCoatColors.length)];
 });
 
 wizardEyes.addEventListener('click', function () {
@@ -40,7 +40,7 @@ wizardEyes.addEventListener('click', function () {
     'yellow',
     'green'
   ];
-  this.style.fill = wizardEyesColors[chooseNumberOfColor(wizardEyesColors.length)];
+  wizardEyes.style.fill = wizardEyesColors[chooseNumberOfColor(wizardEyesColors.length)];
 });
 
 fireballWrap.addEventListener('click', function () {
@@ -51,6 +51,6 @@ fireballWrap.addEventListener('click', function () {
     '#e848d5',
     '#e6e848'
   ];
-  this.style.background = fireballWrapColors[chooseNumberOfColor(fireballWrapColors.length)];
+  fireballWrap.style.background = fireballWrapColors[chooseNumberOfColor(fireballWrapColors.length)];
 });
 
