@@ -10,28 +10,28 @@ var ESCAPE_KEY_CODE = 27;
 
 var isActivateEvent = function (evt) {
   return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
-}
+};
 
 var setupKeydownHandler = function (evt) {
   if (evt.keyCode === ESCAPE_KEY_CODE) {
-      setup.classList.add('invisible');
+    setup.classList.add('invisible');
   }
-}
+};
 
 var showSetupElement = function () {
   setup.classList.remove('invisible');
   document.addEventListener('keydown', setupKeydownHandler);
-}
+};
 
 var hideSetupElement = function () {
   setup.classList.add('invisible');
   document.removeEventListener('keydown', setupKeydownHandler);
-}
+};
 
 var setAriaPressed = function (elementTrue, elementFalse) {
   elementTrue.setAttribute('aria-pressed', 'true');
   elementFalse.setAttribute('aria-pressed', 'false');
-}
+};
 
 setupOpen.addEventListener('click', function (evt) {
   showSetupElement();
