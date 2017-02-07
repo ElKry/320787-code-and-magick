@@ -3,13 +3,68 @@
 var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
+var setupSubmit = setup.querySelector('.setup-submit');
 
-setupOpen.addEventListener('click', function () {
+var ENTER_KEY_CODE = 13;
+var ESCAPE_KEY_CODE = 27;
+
+var isActivateEvent = function (evt) {
+  return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
+};
+
+var setupKeydownHandler = function (evt) {
+  if (evt.keyCode === ESCAPE_KEY_CODE) {
+    setup.classList.add('invisible');
+  }
+};
+
+var showSetupElement = function () {
   setup.classList.remove('invisible');
+  document.addEventListener('keydown', setupKeydownHandler);
+};
+
+var hideSetupElement = function () {
+  setup.classList.add('invisible');
+  document.removeEventListener('keydown', setupKeydownHandler);
+};
+
+var setAriaPressed = function (elementTrue, elementFalse) {
+  elementTrue.setAttribute('aria-pressed', 'true');
+  elementFalse.setAttribute('aria-pressed', 'false');
+};
+
+setupOpen.addEventListener('click', function (evt) {
+  showSetupElement();
+  setAriaPressed(evt.target, setupClose);
 });
 
-setupClose.addEventListener('click', function () {
-  setup.classList.add('invisible');
+setupOpen.addEventListener('keydown', function (evt) {
+  if (isActivateEvent(evt)) {
+    showSetupElement();
+    setAriaPressed(evt.target, setupClose);
+  }
+});
+
+setupClose.addEventListener('click', function (evt) {
+  hideSetupElement();
+  setAriaPressed(evt.target, setupOpen.querySelector('img'));
+});
+
+setupClose.addEventListener('keydown', function (evt) {
+  if (isActivateEvent(evt)) {
+    hideSetupElement();
+    setAriaPressed(evt.target, setupOpen.querySelector('img'));
+  }
+});
+
+setupSubmit.addEventListener('click', function () {
+  hideSetupElement();
+});
+
+setupSubmit.addEventListener('keydown', function (evt) {
+  if (isActivateEvent(evt)) {
+    hideSetupElement();
+  }
 });
 
 var wizardCoat = document.querySelector('#wizard-coat');
