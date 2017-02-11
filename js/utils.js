@@ -1,4 +1,5 @@
-/*global utils*/
+/* global utils:true */
+
 'use strict';
 
 window.utils = {
