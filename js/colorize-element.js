@@ -1,5 +1,7 @@
 'use strict';
 
+/* global utils:true */
+
 window.colorizeElement = function (element, colors, property) {
   var setColor = function (elementName, colorsName, propertyName) {
     var currentColor = elementName.style[propertyName];

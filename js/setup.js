@@ -1,5 +1,7 @@
 'use strict';
 
+/* global utils:true */
+
 var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
