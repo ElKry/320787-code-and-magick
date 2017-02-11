@@ -5,12 +5,7 @@ var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
 var setupSubmit = setup.querySelector('.setup-submit');
 
-var ENTER_KEY_CODE = 13;
 var ESCAPE_KEY_CODE = 27;
-
-var isActivateEvent = function (evt) {
-  return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
-};
 
 var setupKeydownHandler = function (evt) {
   if (evt.keyCode === ESCAPE_KEY_CODE) {
@@ -28,32 +23,27 @@ var hideSetupElement = function () {
   document.removeEventListener('keydown', setupKeydownHandler);
 };
 
-var setAriaPressed = function (elementTrue, elementFalse) {
-  elementTrue.setAttribute('aria-pressed', 'true');
-  elementFalse.setAttribute('aria-pressed', 'false');
-};
-
 setupOpen.addEventListener('click', function (evt) {
   showSetupElement();
-  setAriaPressed(evt.target, setupClose);
+  utils.setAriaPressed(evt.target);
 });
 
 setupOpen.addEventListener('keydown', function (evt) {
-  if (isActivateEvent(evt)) {
+  if (utils.isActivateEvent(evt)) {
     showSetupElement();
-    setAriaPressed(evt.target, setupClose);
+    utils.setAriaPressed(evt.target);
   }
 });
 
 setupClose.addEventListener('click', function (evt) {
   hideSetupElement();
-  setAriaPressed(evt.target, setupOpen.querySelector('img'));
+  utils.setAriaPressed(evt.target);
 });
 
 setupClose.addEventListener('keydown', function (evt) {
-  if (isActivateEvent(evt)) {
+  if (utils.isActivateEvent(evt)) {
     hideSetupElement();
-    setAriaPressed(evt.target, setupOpen.querySelector('img'));
+    utils.setAriaPressed(evt.target);
   }
 });
 
@@ -62,7 +52,7 @@ setupSubmit.addEventListener('click', function () {
 });
 
 setupSubmit.addEventListener('keydown', function (evt) {
-  if (isActivateEvent(evt)) {
+  if (utils.isActivateEvent(evt)) {
     hideSetupElement();
   }
 });
@@ -75,8 +65,7 @@ var chooseNumberOfColor = function (colorsLength) {
   return Math.round(Math.random() * (colorsLength - 1));
 };
 
-wizardCoat.addEventListener('click', function () {
-  var wizardCoatColors = [
+var wizardCoatColors = [
     'rgb(101, 137, 164)',
     'rgb(241, 43, 107)',
     'rgb(146, 100, 161)',
@@ -84,28 +73,24 @@ wizardCoat.addEventListener('click', function () {
     'rgb(215, 210, 55)',
     'rgb(0, 0, 0)'
   ];
-  wizardCoat.style.fill = wizardCoatColors[chooseNumberOfColor(wizardCoatColors.length)];
-});
+window.colorizeElement(wizardCoat, wizardCoatColors, 'fill');
 
-wizardEyes.addEventListener('click', function () {
-  var wizardEyesColors = [
+var wizardEyesColors = [
     'black',
     'red',
     'blue',
     'yellow',
     'green'
   ];
-  wizardEyes.style.fill = wizardEyesColors[chooseNumberOfColor(wizardEyesColors.length)];
-});
+window.colorizeElement(wizardEyes, wizardEyesColors, 'fill');
 
-fireballWrap.addEventListener('click', function () {
-  var fireballWrapColors = [
+var fireballWrapColors = [
     '#ee4830',
     '#30a8ee',
     '#5ce6c0',
     '#e848d5',
     '#e6e848'
   ];
-  fireballWrap.style.background = fireballWrapColors[chooseNumberOfColor(fireballWrapColors.length)];
-});
+window.colorizeElement(fireballWrap, fireballWrapColors, 'background');
+
 
