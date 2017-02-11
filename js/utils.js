@@ -1,3 +1,5 @@
+'use strict';
+
 window.utils = {
   ENTER_KEY_CODE: 13,
 
@@ -16,7 +18,7 @@ window.utils = {
 
   getRandomElementExcept: function (arr, arrElement) {
     var randomElement = null;
-    while(!randomElement || randomElement === arrElement) {
+    while (!randomElement || randomElement === arrElement) {
       randomElement = utils.getRandomElement(arr);
     }
     return randomElement;

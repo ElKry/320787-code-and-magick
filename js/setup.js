@@ -61,36 +61,32 @@ var wizardCoat = document.querySelector('#wizard-coat');
 var wizardEyes = document.querySelector('#wizard-eyes');
 var fireballWrap = document.querySelector('.setup-fireball-wrap');
 
-var chooseNumberOfColor = function (colorsLength) {
-  return Math.round(Math.random() * (colorsLength - 1));
-};
-
 var wizardCoatColors = [
-    'rgb(101, 137, 164)',
-    'rgb(241, 43, 107)',
-    'rgb(146, 100, 161)',
-    'rgb(56, 159, 117)',
-    'rgb(215, 210, 55)',
-    'rgb(0, 0, 0)'
-  ];
+  'rgb(101, 137, 164)',
+  'rgb(241, 43, 107)',
+  'rgb(146, 100, 161)',
+  'rgb(56, 159, 117)',
+  'rgb(215, 210, 55)',
+  'rgb(0, 0, 0)'
+];
 window.colorizeElement(wizardCoat, wizardCoatColors, 'fill');
 
 var wizardEyesColors = [
-    'black',
-    'red',
-    'blue',
-    'yellow',
-    'green'
-  ];
+  'black',
+  'red',
+  'blue',
+  'yellow',
+  'green'
+];
 window.colorizeElement(wizardEyes, wizardEyesColors, 'fill');
 
 var fireballWrapColors = [
-    '#ee4830',
-    '#30a8ee',
-    '#5ce6c0',
-    '#e848d5',
-    '#e6e848'
-  ];
+  '#ee4830',
+  '#30a8ee',
+  '#5ce6c0',
+  '#e848d5',
+  '#e6e848'
+];
 window.colorizeElement(fireballWrap, fireballWrapColors, 'background');
 
 

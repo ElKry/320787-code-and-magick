@@ -1,8 +1,10 @@
+'use strict';
+
 window.colorizeElement = function (element, colors, property) {
-  var setColor = function (element, colors, property) {
-    var currentColor = element.style[property];
-    var randomColor = utils.getRandomElementExcept(colors, currentColor);
-    element.style[property] = randomColor;
+  var setColor = function (elementName, colorsName, propertyName) {
+    var currentColor = elementName.style[propertyName];
+    var randomColor = utils.getRandomElementExcept(colorsName, currentColor);
+    elementName.style[propertyName] = randomColor;
   };
 
   element.addEventListener('click', function () {
@@ -16,4 +18,4 @@ window.colorizeElement = function (element, colors, property) {
       utils.setAriaPressed(element);
     }
   });
-}
+};
