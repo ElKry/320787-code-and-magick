@@ -1,6 +1,6 @@
-/* global utils:true */
-
 'use strict';
+
+/* global utils:true */
 
 window.utils = {
   ENTER_KEY_CODE: 13,
