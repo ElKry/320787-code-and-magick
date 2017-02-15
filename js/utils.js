@@ -1,7 +1,5 @@
 'use strict';
 
-/* global utils:true */
-
 window.utils = (function () {
   var ENTER_KEY_CODE = 13;
   var ESCAPE_KEY_CODE = 27;
