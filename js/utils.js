@@ -16,6 +16,14 @@ window.utils = (function () {
     }
   };
 
+  var getRandomElementExcept = function (arr, arrElement) {
+    var randomElement = null;
+    while (!randomElement || randomElement === arrElement) {
+      randomElement = getRandomElement(arr);
+    }
+    return randomElement;
+  };
+
   return {
     setAriaPressed: function (elementFalse) {
       var elementsTrue = document.querySelectorAll('[aria-pressed="true"]');
@@ -25,12 +33,10 @@ window.utils = (function () {
       }
     },
 
-    getRandomElementExcept: function (arr, arrElement) {
-      var randomElement = null;
-      while (!randomElement || randomElement === arrElement) {
-        randomElement = getRandomElement(arr);
-      }
-      return randomElement;
+    setColor: function (elementName, colorsName, propertyName) {
+      var currentColor = elementName.style[propertyName];
+      var randomColor = getRandomElementExcept(colorsName, currentColor);
+      elementName.style[propertyName] = randomColor;
     },
 
     isActivateEvent: function (evt) {
@@ -50,11 +56,14 @@ window.utils = (function () {
       });
     },
 
-    hideSetupElement: function (setupElementHide) {
+    hideSetupElement: function (setupElementHide, cb) {
       setupElementHide.classList.add('invisible');
       document.removeEventListener('keydown', function (evt) {
         setupKeydownHandler(setupElementHide, evt);
       });
+      if (typeof cb === 'function') {
+        cb();
+      }
     }
   };
 })();

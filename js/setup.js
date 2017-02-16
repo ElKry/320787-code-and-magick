@@ -27,7 +27,9 @@
 
   setupClose.addEventListener('keydown', function (evt) {
     if (utils.isActivateEvent(evt)) {
-      utils.hideSetupElement(setup);
+      utils.hideSetupElement(setup, function () {
+        setupOpen.querySelector('img').focus();
+      });
       utils.setAriaPressed(evt.target);
     }
   });
@@ -54,7 +56,9 @@
     'rgb(215, 210, 55)',
     'rgb(0, 0, 0)'
   ];
-  window.colorize.colorizeElement(wizardCoat, wizardCoatColors, 'fill');
+  window.colorize.setColorizedElementHandler(wizardCoat, function () {
+    utils.setColor(wizardCoat, wizardCoatColors, 'fill');
+  });
 
   var wizardEyesColors = [
     'black',
@@ -63,7 +67,9 @@
     'yellow',
     'green'
   ];
-  window.colorize.colorizeElement(wizardEyes, wizardEyesColors, 'fill');
+  window.colorize.setColorizedElementHandler(wizardEyes, function () {
+    utils.setColor(wizardEyes, wizardEyesColors, 'fill');
+  });
 
   var fireballWrapColors = [
     '#ee4830',
@@ -72,7 +78,9 @@
     '#e848d5',
     '#e6e848'
   ];
-  window.colorize.colorizeElement(fireballWrap, fireballWrapColors, 'background');
+  window.colorize.setColorizedElementHandler(fireballWrap, function () {
+    utils.setColor(fireballWrap, fireballWrapColors, 'background');
+  });
 })();
 
 
