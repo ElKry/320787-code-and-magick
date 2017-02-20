@@ -541,7 +541,7 @@ input[type=radio]:checked + .review-mark-label {
 
 .setup {
   width: 800px;
-  height: 600px;
+  height: 670px;
 
   position: fixed;
   left: 50%;
@@ -619,10 +619,22 @@ input[type=radio]:checked + .review-mark-label {
   height: 250px;
 
   position: absolute;
-  bottom: 150px;
+  /*bottom: 150px;*/
   left: 50px;
+  top: 200px;
 
   border-bottom: solid 15px #1cb34d;
+}
+
+.setup-similar {
+  position: absolute;
+  bottom: 110px;
+  left: 0;
+}
+
+.setup-similar .setup-wizard {
+  position: relative;
+  top: 0;
 }
 
 .setup-fireball-wrap {
@@ -645,7 +657,8 @@ input[type=radio]:checked + .review-mark-label {
 
 .setup-artifacts {
   position: absolute;
-  bottom: 170px;
+  /*bottom: 170px;*/
+  top: 200px;
   left: 460px;
 
   display: flex;

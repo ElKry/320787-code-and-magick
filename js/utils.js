@@ -25,6 +25,8 @@ window.utils = (function () {
   };
 
   return {
+    getRandomElementExcept: getRandomElementExcept,
+
     setAriaPressed: function (elementFalse) {
       var elementsTrue = document.querySelectorAll('[aria-pressed="true"]');
       elementFalse.setAttribute('aria-pressed', 'true');
