@@ -2,7 +2,7 @@
 
 window.load = (function () {
   var errorHandler = function (err) {
-    alert(err);
+    window.console.log(err);
   };
 
   return function (url, onLoad, onError) {
