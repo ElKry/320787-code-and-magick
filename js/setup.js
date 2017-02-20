@@ -9,14 +9,11 @@
   var setupSubmit = setup.querySelector('.setup-submit');
   var setupSimilar = setup.querySelector('.setup-similar');
   var loadWizards = function () {
-    window.load('https://intensive-javascript-server-myophkugvq.now.sh/code-and-magick/data',
-      function (data) {
-        window.render(data);
-      },
-      function (err) {
-        setupSimilar.innerHTML = err;
-      }
-    );
+    window.load('https://intensive-javascript-server-myophkugvq.now.sh/code-and-magick/data', function (data) {
+      window.render(data);
+    }, function (err) {
+      setupSimilar.innerHTML = err;
+    });
   };
 
   setupOpen.addEventListener('click', function (evt) {
@@ -69,14 +66,11 @@
     'rgb(215, 210, 55)',
     'rgb(0, 0, 0)'
   ];
-  window.colorize.setColorizedElementHandler(wizardCoat,
-    function () {
-      utils.setColor(wizardCoat, wizardCoatColors, 'fill');
-    },
-    function () {
-      window.setTimeout(loadWizards, 5000);
-    }
-  );
+  window.colorize.setColorizedElementHandler(wizardCoat, function () {
+    utils.setColor(wizardCoat, wizardCoatColors, 'fill');
+  }, function () {
+    window.setTimeout(loadWizards, 5000);
+  });
 
   var wizardEyesColors = [
     'black',
@@ -85,14 +79,11 @@
     'yellow',
     'green'
   ];
-  window.colorize.setColorizedElementHandler(wizardEyes,
-    function () {
-      utils.setColor(wizardEyes, wizardEyesColors, 'fill');
-    },
-    function () {
-      window.setTimeout(loadWizards, 5000);
-    }
-  );
+  window.colorize.setColorizedElementHandler(wizardEyes, function () {
+    utils.setColor(wizardEyes, wizardEyesColors, 'fill');
+  }, function () {
+    window.setTimeout(loadWizards, 5000);
+  });
 
   var fireballWrapColors = [
     '#ee4830',

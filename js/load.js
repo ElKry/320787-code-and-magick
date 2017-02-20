@@ -2,13 +2,13 @@
 
 window.load = (function () {
   var errorHandler = function (err) {
-    console.log(err);
-  }
+    alert(err);
+  };
 
   return function (url, onLoad, onError) {
     var xhr = new XMLHttpRequest();
 
-    if(typeof onError === 'function') {
+    if (typeof onError === 'function') {
       errorHandler = onError;
     }
 

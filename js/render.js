@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /* global utils:true */
 
@@ -27,10 +27,10 @@ window.render = (function () {
     return wizardElement;
   };
 
-  return function(wizards) {
+  return function (wizards) {
     setupSimilar.innerHTML = '';
     for (var i = 0; i < 5; i++) {
-      setupSimilar.appendChild(renderWizard(utils.getRandomElementExcept(wizards, wizards[i+1])));
+      setupSimilar.appendChild(renderWizard(utils.getRandomElementExcept(wizards, wizards[i + 1])));
     }
   };
 })();
